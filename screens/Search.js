@@ -29,7 +29,6 @@ const Search = () => {
     );
     setResults(filteredResults);
   };
-
   return (
     <View style={styles.container}>
       <TextInput

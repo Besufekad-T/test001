@@ -13,7 +13,7 @@ const ConservationStatus = ({ route, navigation }) => {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'Authorization': 'Bearer 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' // Use your actual API key
+            'Authorization': 'Bearer APY_KEY' // Replace YOUR_OPENAI_API_KEY with your actual key
           },
           body: JSON.stringify({
             model: 'gpt-3.5-turbo-instruct',

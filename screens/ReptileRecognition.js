@@ -16,7 +16,7 @@ const ReptileRecognition = ({navigation}) => {
       base64: true,
     });
     
-    console.log(result)
+    //console.log(result)
    
     if (!result.cancelled) {
       const uriToPass = result.assets[0].uri
