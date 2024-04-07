@@ -97,7 +97,7 @@ const ReptileRecognition = ({navigation}) => {
             {
               "role": "user",
               "content": [
-                {"type": "text", "text": "Please provide basic information about the reptile in the image, this information can include where they live mostly, what they eat, how long they live and etc. Please also include their common and scientific name at the beginning of your response."},
+                {"type": "text", "text": "Please provide the common and scientific name at the beginning in the following format: Common Name (Scientific Name) - .... Then continue on by providing basic information about the reptile in the image, this information can include where they live mostly, what they eat, how long they live and etc."},
                 {
                   "type": "image_url",
                   "image_url": {
@@ -113,7 +113,7 @@ const ReptileRecognition = ({navigation}) => {
         },
         {
           headers: {
-            'Authorization': `Bearer API_KEY`, // Use the actual API key.
+            'Authorization': 'Bearer API_key', // Replace with your actual API key
             'Content-Type': 'application/json'
           },
         }
