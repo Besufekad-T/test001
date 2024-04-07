@@ -6,6 +6,10 @@ import ReptileRegistrationScreen from '../screens/PetRegisteration';
 import ReptileRecognition from '../screens/ReptileRecognition';
 import SocialMedia from '../screens/SocialMedia';
 import Trivia from '../screens/Trivia';
+import Care from '../screens/Care.js';
+import ConservationStatus from '../screens/ConservationStatus.js';
+import Junction from '../screens/Junction.js'
+import Report from '../screens/ReportToWild.js'
 
 const Stack = createNativeStackNavigator();
 
@@ -68,6 +72,34 @@ export default function App() {
         <Stack.Screen
           name="Trivia"
           component={Trivia}
+          options={{
+            headerShown: false
+          }}
+        />
+        <Stack.Screen
+          name="Care"
+          component={Care}
+          options={{
+            headerShown: false
+          }}
+        />
+         <Stack.Screen
+          name="ConservationStatus"
+          component={ConservationStatus}
+          options={{
+            headerShown: false
+          }}
+        />
+        <Stack.Screen
+          name="Junction"
+          component={Junction}
+          options={{
+            headerShown: false
+          }}
+        />
+        <Stack.Screen
+          name="Report"
+          component={Report}
           options={{
             headerShown: false
           }}
