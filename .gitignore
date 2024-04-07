@@ -38,3 +38,11 @@ firebase.js
 # dont push firebase
 firebase.js   
 
+# dont push ReptileRecognition
+ReptileRecognition.js
+
+# dont push Care
+Care.js
+
+# dont push ConservationStatus
+ConservationStatus.js
