@@ -6,6 +6,8 @@ import ReptileRegistrationScreen from '../screens/PetRegisteration';
 import ReptileRecognition from '../screens/ReptileRecognition';
 import SocialMedia from '../screens/SocialMedia';
 import Trivia from '../screens/Trivia';
+import MorphTracking from '../components/MorphTracking';
+
 
 const Stack = createNativeStackNavigator();
 
@@ -68,6 +70,13 @@ export default function App() {
         <Stack.Screen
           name="Trivia"
           component={Trivia}
+          options={{
+            headerShown: false
+          }}
+        />
+         <Stack.Screen
+          name="MorphTracking"
+          component={MorphTracking}
           options={{
             headerShown: false
           }}

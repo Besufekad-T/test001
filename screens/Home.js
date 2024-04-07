@@ -1,10 +1,12 @@
 import React from 'react';
-import { View, Text, StyleSheet, Pressable } from 'react-native';
+import { View, Text, StyleSheet, Pressable,ScrollView } from 'react-native';
 import COLORS from '../constants/colors';
 import PetRegButton from '../components/PetRegButtons';
 import TriviaButton from '../components/TriviaButton';
 import Divider from '../components/Divider';
 import SocialMediaButton from '../components/SocMediaButton';
+import MorphTrackingButton from '../components/MorphTrackingButton';
+
 
 
 export default function Home({ navigation }) {
@@ -12,6 +14,7 @@ export default function Home({ navigation }) {
     
     <View style={styles.container}>
       {/* <Text style={styles.text}>Home</Text> */}
+      <ScrollView contentContainerStyle={{ flexGrow: 1, padding: 20 }}></ScrollView>
       <View style={{
         flexDirection: "row",
         justifyContent: "center",
@@ -20,6 +23,7 @@ export default function Home({ navigation }) {
 
         
       }}>
+        
         <Pressable
           onPress={() => navigation.navigate("petreg")}
           style={styles.buttoncontainer}
@@ -60,6 +64,25 @@ export default function Home({ navigation }) {
         </Pressable>
         
       </View>
+      
+      <View style={{
+        flexDirection: "row",
+        justifyContent: "center",
+        marginVertical: 22
+        
+      }}>
+        <Pressable
+          onPress={() => navigation.navigate("MorphTracking")}
+          style={styles.buttoncontainer}
+
+        >
+       <MorphTrackingButton/>
+        </Pressable>
+        
+      </View>
+
+      <ScrollView/>
+
     </View>
   );
 }
