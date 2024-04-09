@@ -10,6 +10,8 @@ import Care from '../screens/Care.js';
 import ConservationStatus from '../screens/ConservationStatus.js';
 import Junction from '../screens/Junction.js'
 import Report from '../screens/ReportToWild.js'
+import MorphTracking from '../components/MorphTracking';
+
 
 const Stack = createNativeStackNavigator();
 
@@ -100,6 +102,13 @@ export default function App() {
         <Stack.Screen
           name="Report"
           component={Report}
+          options={{
+            headerShown: false
+          }}
+        />
+        <Stack.Screen
+          name="MorphTracking"
+          component={MorphTracking}
           options={{
             headerShown: false
           }}
