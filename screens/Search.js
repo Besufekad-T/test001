@@ -45,13 +45,29 @@ const Search = () => {
           <Text>{item.name || item.title}: {item.email || item.content}</Text>
         )}
       />
+      <TextInput
+        style={styles.input}
+        placeholder="Search..."
+        value={query}
+        onChangeText={text => setQuery(text)}
+      />
+      <Button title="Search" onPress={handleSearch} />
+      <FlatList
+        data={results}
+        keyExtractor={item => item.id}
+        renderItem={({ item }) => (
+          <Text>{item.name || item.title}: {item.email || item.content}</Text>
+        )}
+      />
     </View>
   );
+};
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    marginTop: 50,
     marginTop: 50,
   },
   input: {
