@@ -16,7 +16,6 @@ import Button from "../components/Buttons";
 import { Firebase_auth } from "../firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 
-
 const auth = Firebase_auth;
 
 const Signup = ({ navigation }) => {
@@ -119,8 +118,7 @@ const Signup = ({ navigation }) => {
             }}
           >
             <TextInput
-              value={email}
-              placeholder="+1"
+              value={"+1"}
               placeholderTextColor={COLORS.black}
               keyboardType="numeric"
               onChangeText={(text) => setPhonenumber(text)}
