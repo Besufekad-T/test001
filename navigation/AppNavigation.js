@@ -10,6 +10,7 @@ import Care from '../screens/Care.js';
 import ConservationStatus from '../screens/ConservationStatus.js';
 import Junction from '../screens/Junction.js'
 import Report from '../screens/ReportToWild.js'
+import NecTimerSchedScreen from '../screens/NecTimerSchedScreen.js';
 
 const Stack = createNativeStackNavigator();
 
@@ -104,7 +105,12 @@ export default function App() {
             headerShown: false
           }}
         />
-        
+        <Stack.Screen
+          name="NecTimerSchedScreen"
+          component={NecTimerSchedScreen}
+          options={{headerShown: false}}
+        />
+
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -24,17 +24,25 @@ const Signup = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
-  const [phonenumber, setPhonenumber] = useState("");
+  const [callingCode, setCallingCode] = useState("+1"); // Default calling code [US
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [username, setUsername] = useState("");
 
   const signUp = async () => {
     try {
       const response = await createUserWithEmailAndPassword(
         auth,
         email,
-        password
+        password,
+        username,
+        phoneNumber
       );
       console.log(response);
       alert("Account Created");
+      //If account creation is successful, navigate to the login screen
+      if(response){
+        navigation.navigate("Login");
+      }
     } catch (error) {
       console.log(error);
     }
@@ -55,6 +63,42 @@ const Signup = ({ navigation }) => {
           >
             Create Account
           </Text>
+        </View>
+
+        <View style={{ marginBottom: 12 }}>
+          <Text
+            style={{
+              fontSize: 16,
+              fontWeight: 400,
+              marginVertical: 8,
+            }}
+          >
+            Username
+          </Text>
+
+          <View
+            style={{
+              width: "100%",
+              height: 48,
+              borderColor: COLORS.black,
+              borderWidth: 1,
+              borderRadius: 8,
+              alignItems: "center",
+              justifyContent: "center",
+              paddingLeft: 22,
+            }}
+          >
+            <TextInput
+              value={username}
+              placeholder="Enter your username"
+              placeholderTextColor={COLORS.black}
+              keyboardType="email-address"
+              onChangeText={(text) => setUsername(text)}
+              style={{
+                width: "100%",
+              }}
+            />
+          </View>
         </View>
 
         <View style={{ marginBottom: 12 }}>
@@ -118,10 +162,10 @@ const Signup = ({ navigation }) => {
             }}
           >
             <TextInput
-              value={"+1"}
+              value={callingCode}
               placeholderTextColor={COLORS.black}
               keyboardType="numeric"
-              onChangeText={(text) => setPhonenumber(text)}
+              onChangeText = {(text) => setCallingCode(text)}
               style={{
                 width: "12%",
                 borderRightWidth: 1,
@@ -131,8 +175,10 @@ const Signup = ({ navigation }) => {
             />
 
             <TextInput
+              value={phoneNumber}
               placeholder="Enter your phone number"
               placeholderTextColor={COLORS.black}
+              onChangeText={(text) => setPhoneNumber(text)}
               keyboardType="numeric"
               style={{
                 width: "80%",
