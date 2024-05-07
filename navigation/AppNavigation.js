@@ -12,6 +12,8 @@ import Junction from '../screens/Junction.js'
 import Report from '../screens/ReportToWild.js'
 import NecTimerSchedScreen from '../screens/NecTimerSchedScreen.js';
 import MorphTracking from '../components/MorphTracking';
+import FirstAidSuggestions from '../screens/FirstAidSuggestions.js';
+import SuggestionScreen from '../screens/SuggestionScreen.js';
 
 
 const Stack = createNativeStackNavigator();
@@ -119,7 +121,18 @@ export default function App() {
             headerShown: false
           }}
         />
-
+         <Stack.Screen
+          name="FirstAidSuggestions"
+          component={FirstAidSuggestions}
+          options={{
+            headerShown: false
+          }}
+        />
+        <Stack.Screen name="Suggestion" 
+        component={SuggestionScreen} 
+        options={{ 
+          headerShown: false }} />
+        
       </Stack.Navigator>
     </NavigationContainer>
   );

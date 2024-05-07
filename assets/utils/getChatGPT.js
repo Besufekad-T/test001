@@ -3,7 +3,7 @@ myHeaders.append("Content-Type", "application/json");
 myHeaders.append("Accept", "application/json");
 myHeaders.append(
   "Authorization",
-  "Bearer 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"
+  "Bearer sk-proj-ljz6025793pfNLudQnMST3BlbkFJ6zZnPsoFMSpsJU8Av97Z"
 );
 myHeaders.append(
   "Cookie",

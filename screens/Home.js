@@ -7,6 +7,7 @@ import Divider from '../components/Divider';
 import SocialMediaButton from '../components/SocMediaButton';
 import NecTimerSchedButton from '../components/NecTimerSchedButton';
 import MorphTrackingButton from '../components/MorphTrackingButton';
+import FirstAidButton from '../components/FirstAidButton';
 
 
 
