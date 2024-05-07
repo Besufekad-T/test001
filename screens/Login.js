@@ -27,9 +27,13 @@ const Login = ({ navigation }) => {
 
   const logIn = async () => {
     try {
-      const response = await signInWithEmailAndPassword(auth, email, password);
-      console.log(response);
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      console.log(userCredential);
+      const user = userCredential.user;
       alert("Success");
+      if(user){
+        navigation.navigate("Menu");
+      }
     } catch (error) {
       console.log(error);
       alert("Login failed: " + "Wrong Email/Password");
@@ -156,12 +160,12 @@ const Login = ({ navigation }) => {
           <Button
             title="Login"
             filled
-            //onPress={(logIn)}
+            onPress={(logIn)}
             style={{
               marginTop: 18,
               marginBottom: 4,
             }}
-             onPress={() => navigation.navigate("Menu")}
+            //onPress={() => navigation.navigate("Menu")}
           />
 
           <View

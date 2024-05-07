@@ -15,11 +15,11 @@ const CareInfo = ({ route, navigation }) => {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'Authorization': 'Bearer API_KEY' // Replace with your actual API key
+            'Authorization': 'Bearer API_key' // Replace with your actual API key
           },
           body: JSON.stringify({
             model: 'gpt-3.5-turbo-instruct', // Adjust based on the model you have access to
-            prompt: `Provide care instructions based on the information, ${reptileInfo}, as a pet.`,
+            prompt: `Provide care instructions based on the information, ${reptileInfo}, as a pet. However, if the reptile is not suitable as a pet, please mention that as well.`,
             temperature: 0.7,
             max_tokens: 200,
             top_p: 1.0,
