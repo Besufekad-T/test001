@@ -77,6 +77,30 @@ export default function Home({ navigation }) {
           <NecTimerSchedButton/>
           </Pressable>
         </View>
+        <View style={{
+          flexDirection: "row",
+          justifyContent: "center", 
+          marginVertical: 5,
+        }}>
+          <Pressable
+            onPress={() => navigation.navigate("MorphTracking")}
+            style={styles.buttoncontainer}
+          >
+          <MorphTrackingButton/>
+          </Pressable>
+        </View>
+        <View style={{
+          flexDirection: "row",
+          justifyContent: "center", 
+          marginVertical: 5,
+        }}>
+          <Pressable
+            onPress={() => navigation.navigate("FirstAidSuggestions")}
+            style={styles.buttoncontainer}
+          >
+          <FirstAidButton/>
+          </Pressable>
+        </View>
       </ScrollView>
     </View>
   );

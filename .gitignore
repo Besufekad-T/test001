@@ -46,4 +46,4 @@ firebase.js
 
 # dont push ConservationStatus
 ./screens/ConservationStatus.js
-assets/utils/getChatGPT
+./utils/getChatGPT
