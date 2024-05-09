@@ -1,10 +1,7 @@
 var myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
 myHeaders.append("Accept", "application/json");
-myHeaders.append(
-  "Authorization",
-  "Bearer sk-proj-ljz6025793pfNLudQnMST3BlbkFJ6zZnPsoFMSpsJU8Av97Z"
-);
+myHeaders.append("Authorization", "Bearer ");
 myHeaders.append(
   "Cookie",
   "__cf_bm=cL.dyckf5ohY3Ev2WPu9WDvNL4sRF7p3LAoVZc.4wFM-1689706453-0-ARI4UP8upBN1UpzG77t5DaVW7/iziw00aNCSRmdjIYyu3pQ3MhETa0ldiy8AZaFnN2PsNZW0I5Mb84mPk8AxQEs="
