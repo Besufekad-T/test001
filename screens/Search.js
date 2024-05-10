@@ -62,7 +62,6 @@ const Search = () => {
     </View>
   );
 };
-};
 
 const styles = StyleSheet.create({
   container: {

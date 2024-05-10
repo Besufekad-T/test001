@@ -1,57 +1,38 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, ScrollView, ActivityIndicator } from 'react-native';
-import RNFS from 'react-native-fs';
-import Papa from 'papaparse';
+import eventsData from '../assets/events.json'; // Adjust the path to your events.json file
 import axios from 'axios';
 
-const EventsPage = () => {
+const NotificationsScreen = () => {
   const [events, setEvents] = useState(null);
   const [isFetching, setIsFetching] = useState(false);
 
-  const readAndParseCsv = async () => {
-    try {
-      const csvFilePath = RNFS.MainBundlePath + '/events.csv';
-      const csvFile = await RNFS.readFile(csvFilePath, 'utf8');
-      return Papa.parse(csvFile, {
-        header: true,
-        dynamicTyping: true,
-        skipEmptyLines: true,
-        complete: (results) => results.data,
-      }).data;
-    } catch (error) {
-      console.error('Error reading CSV file:', error);
-    }
-  };
-
   const fetchEventsFromOpenAI = async (eventsData) => {
-    const prompt = eventsData.map(event => `${event.name}, ${event.date}, ${event.address}`).join('\n');
+    const prompt = "Can you organize these events into a presentable list that shows each event's name, date, and address. Sort the lsit by soonest date."+ eventsData.map(event => `${event.name}, ${event.date}, ${event.address}`).join('\n');
     try {
       const response = await axios.post('https://api.openai.com/v1/completions', {
-        model: "gpt-3.5-turbo-instruct", // Use the appropriate model name
+        model: "gpt-3.5-turbo-instruct", 
         prompt,
         max_tokens: 300
       }, {
         headers: {
-          'Authorization': `Bearer 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` // Replace with your actual API key
+          'Authorization': `Bearer ` // Replace with your actual OpenAI API key
         }
       });
 
       return response.data.choices[0].text.trim();
     } catch (error) {
       console.error('Error calling OpenAI:', error);
+      return ''; // Return empty string on error
     }
   };
 
   useEffect(() => {
-    (async () => {
-      setIsFetching(true);
-      const localEventsData = await readAndParseCsv();
-      if (localEventsData) {
-        const formattedEvents = await fetchEventsFromOpenAI(localEventsData);
-        setEvents(formattedEvents);
-      }
+    setIsFetching(true);
+    fetchEventsFromOpenAI(eventsData).then(formattedEvents => {
+      setEvents(formattedEvents);
       setIsFetching(false);
-    })();
+    });
   }, []);
 
   return (
@@ -80,4 +61,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default EventsPage;
+export default NotificationsScreen;
