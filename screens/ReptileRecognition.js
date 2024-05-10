@@ -111,7 +111,7 @@ const ReptileRecognition = ({navigation}) => {
         },
         {
           headers: {
-            'Authorization': 'Bearer ', // Replace with your actual API key
+            'Authorization': ' ', // Replace with your actual API key
             'Content-Type': 'application/json'
           },
         }

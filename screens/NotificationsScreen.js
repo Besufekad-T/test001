@@ -16,7 +16,7 @@ const NotificationsScreen = () => {
         max_tokens: 300
       }, {
         headers: {
-          'Authorization': `Bearer ` // Replace with your actual OpenAI API key
+          'Authorization': ` ` // Replace with your actual OpenAI API key
         }
       });
 
