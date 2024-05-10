@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, ScrollView } from 'react-native';
-import { db } from './firebase';  // Import Firestore instance
+import { db } from '../firebase';  // Import Firestore instance
 import { collection, addDoc, query, onSnapshot, serverTimestamp } from 'firebase/firestore';
 
 const NecTimerSchedScreen = ({ navigation }) => {
   const [task, setTask] = useState('');
   const [date, setDate] = useState('');
+  const [time, setTime] = useState(''); // Added time state [1/2]
   const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
@@ -25,27 +26,43 @@ const NecTimerSchedScreen = ({ navigation }) => {
     try {
       await addDoc(collection(db, "tasks"), {
         task,
-        date,
+        date: date + ' ' + time,
         createdAt: serverTimestamp(),
       });
       setTask('');
       setDate('');
+      setTime('');
     } catch (error) {
       console.error("Error adding document: ", error);
     }
   };
 
+  // Add some padding at the top
+  // Center the title and add some padding and green color
+  // Give the "Add Task"button a green color
   return (
-    <ScrollView style={styles.container}>
+    <View style={styles.container}>
+    <View style={{padding: 15}}>
+      <Text style={{fontSize: 20, height: 40, padding: 5,
+        color: 'white', backgroundColor: 'green',
+        textAlign: 'center', justifyContent: 'center'}}>Schedule Tracker</Text>
+    </View>    
+    <View>
       <TextInput placeholder="Enter task" value={task} onChangeText={setTask} style={styles.input} />
-      <TextInput placeholder="Enter date and time" value={date} onChangeText={setDate} style={styles.input} />
-      <Button title="Add Task" onPress={addTask} />
+      <TextInput placeholder="Enter date" value={date} onChangeText={setDate} style={styles.input} />
+      <TextInput placeholder="Enter time" value={time} onChangeText={setTime} style={styles.input} />
+      <View style={{alignItems: 'center', justifyContent: 'center'}}>
+        <Button title="Add Task" onPress={addTask} color="green"/>
+      </View>
+    </View>
+    <ScrollView>
       {tasks.map(task => (
         <View key={task.id} style={styles.taskItem}>
           <Text style={styles.taskText}>{task.task} - {task.date}</Text>
         </View>
       ))}
     </ScrollView>
+  </View>
   );
 };
 
