@@ -68,7 +68,7 @@ const Welcome = ({ navigation }) => {
                     <Button
                         title="Join Now"
                         //onPress={() => navigation.navigate("Signup")}
-                        onPress={() => navigation.navigate("Notifications")}
+                        onPress={() => navigation.navigate("Report")}
                         style={{
                             marginTop: 22,
                             width: "100%"

@@ -15,7 +15,7 @@ const CareInfo = ({ route, navigation }) => {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'Authorization': 'Bearer API_key' // Replace with your actual API key
+            'Authorization': 'Bearer ' // Replace with your actual API key
           },
           body: JSON.stringify({
             model: 'gpt-3.5-turbo-instruct', // Adjust based on the model you have access to
