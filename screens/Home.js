@@ -8,6 +8,7 @@ import SocialMediaButton from '../components/SocMediaButton';
 import NecTimerSchedButton from '../components/NecTimerSchedButton';
 import MorphTrackingButton from '../components/MorphTrackingButton';
 import FirstAidButton from '../components/FirstAidButton';
+import Report2WildButton from '../components/Report2WildButton';
 
 
 
@@ -62,6 +63,26 @@ export default function Home({ navigation }) {
             style={styles.buttoncontainer}
           >
           <SocialMediaButton/>
+          </Pressable>
+          
+        </View>
+        <View style={{
+          flexDirection: "row",
+          justifyContent: "center", 
+          marginVertical: 5,
+        }}>
+        </View>
+        <View style={{
+          flexDirection: "row",
+          justifyContent: "center",
+          marginVertical: 5
+          
+        }}>
+          <Pressable
+            onPress={() => navigation.navigate("Report")}
+            style={styles.buttoncontainer}
+          >
+          <Report2WildButton/>
           </Pressable>
           
         </View>

@@ -14,8 +14,8 @@ import NecTimerSchedScreen from '../screens/NecTimerSchedScreen.js';
 import MorphTracking from '../components/MorphTracking';
 import FirstAidSuggestions from '../screens/FirstAidSuggestions.js';
 import SuggestionScreen from '../screens/SuggestionScreen.js';
-
 import NotificationsScreen from '../screens/NotificationsScreen.js';
+import ReportToWild from '../screens/ReportToWild.js';
 
 const Stack = createNativeStackNavigator();
 
@@ -89,7 +89,7 @@ export default function App() {
             headerShown: false
           }}
         />
-         <Stack.Screen
+        <Stack.Screen
           name="ConservationStatus"
           component={ConservationStatus}
           options={{
@@ -105,7 +105,7 @@ export default function App() {
         />
         <Stack.Screen
           name="Report"
-          component={Report}
+          component={ReportToWild}
           options={{
             headerShown: false
           }}
@@ -122,7 +122,7 @@ export default function App() {
             headerShown: false
           }}
         />
-         <Stack.Screen
+        <Stack.Screen
           name="FirstAidSuggestions"
           component={FirstAidSuggestions}
           options={{
