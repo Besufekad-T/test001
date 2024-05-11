@@ -11,7 +11,7 @@ import ConservationStatus from '../screens/ConservationStatus.js';
 import Junction from '../screens/Junction.js'
 import Report from '../screens/ReportToWild.js'
 import NecTimerSchedScreen from '../screens/NecTimerSchedScreen.js';
-import MorphTracking from '../components/MorphTracking';
+import MorphTracking from '../screens/MorphTracking.js';
 import FirstAidSuggestions from '../screens/FirstAidSuggestions.js';
 import SuggestionScreen from '../screens/SuggestionScreen.js';
 import NotificationsScreen from '../screens/NotificationsScreen.js';

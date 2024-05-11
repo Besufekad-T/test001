@@ -2318,11 +2318,6 @@
     opencollective-postinstall "^2.0.3"
     superstruct "^0.6.2"
 
-"@react-native-picker/picker@^2.7.5":
-  version "2.7.5"
-  resolved "https://registry.npmjs.org/@react-native-picker/picker/-/picker-2.7.5.tgz"
-  integrity sha512-vhMaOLkXSUb+YKVbukMJToU4g+89VMhBG2U9+cLYF8X8HtFRidrHjohGqT8/OyesDuKIXeLIP+UFYI9Q9CRA9Q==
-
 "@react-native-picker/picker@react-native-picker/picker":
   version "2.7.5"
   resolved "https://codeload.github.com/react-native-picker/picker/tar.gz/7b7a95f4fe842d0a0c696310f9f10a8267247227"
