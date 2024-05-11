@@ -32,7 +32,7 @@ const Login = ({ navigation }) => {
       const user = userCredential.user;
       alert("Success");
       if(user){
-        navigation.navigate("Menu");
+        navigation.navigate("Home");
       }
     } catch (error) {
       console.log(error);

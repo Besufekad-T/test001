@@ -48,7 +48,7 @@ export default function App() {
           }}
         />
         <Stack.Screen
-          name="Menu"
+          name="Home"
           component={TabNavigation}
           options={{
             headerShown: false
@@ -57,9 +57,7 @@ export default function App() {
         <Stack.Screen
           name="petreg"
           component={ReptileRegistrationScreen}
-          options={{
-            headerShown: false
-          }}
+          options={{ title: 'Pet Registration' }}
         />
         <Stack.Screen
           name="ReptRec"
@@ -72,14 +70,14 @@ export default function App() {
           name="SocMedia"
           component={SocialMedia}
           options={{
-            headerShown: false
+            title: 'Social Media' 
           }}
         />
         <Stack.Screen
           name="Trivia"
           component={Trivia}
           options={{
-            headerShown: false
+            title: 'Trivia' 
           }}
         />
         <Stack.Screen
@@ -107,26 +105,26 @@ export default function App() {
           name="Report"
           component={ReportToWild}
           options={{
-            headerShown: false
+            title: 'Report to Wildlife'
           }}
         />
         <Stack.Screen
           name="NecTimerSchedScreen"
           component={NecTimerSchedScreen}
-          options={{headerShown: false}}
+          options={{title: 'Necessity Timer & Schedule'}}
         />
         <Stack.Screen
           name="MorphTracking"
           component={MorphTracking}
           options={{
-            headerShown: false
+            title: 'Morph Tracking' 
           }}
         />
         <Stack.Screen
           name="FirstAidSuggestions"
           component={FirstAidSuggestions}
           options={{
-            headerShown: false
+            title: 'First Aid Suggestions'
           }}
         />
         <Stack.Screen name="Suggestion" 
