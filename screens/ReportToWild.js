@@ -5,7 +5,7 @@ import * as Location from 'expo-location';
 import MapView, { Marker } from 'react-native-maps';
 import axios from 'axios';
 
-const ContactScreen = () => {
+const ContactScreen = ({ navigation }) => {
   const [location, setLocation] = useState(null);
   const [errorMsg, setErrorMsg] = useState(null);
   const [preserves, setPreserves] = useState([]);
@@ -26,7 +26,7 @@ const ContactScreen = () => {
 
   const fetchNearbyPreserves = async (latitude, longitude) => {
     try {
-      const apiKey = 'API_KEY';  // Replace with your actual Google API Key
+      const apiKey = '';  // Replace with your actual Google API Key
       const keywords = "wildlife preserve|wildlife sanctuary|wildlife rescue|nature reserve|conservation park|wildlife rehabilitation|animal sanctuary|eco preserve|wildlife conservation|biodiversity park";
       const url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${latitude},${longitude}&radius=32186.9&keyword=${encodeURIComponent(keywords)}&key=${apiKey}`;
       const response = await axios.get(url);

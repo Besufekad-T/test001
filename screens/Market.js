@@ -26,7 +26,7 @@ const Market = () => {
 
   const fetchNearbyPreserves = async (latitude, longitude) => {
     try {
-      const apiKey = 'AIzaSyBmLT4SxyLb_kIBVe8TUGty6MV76CptdQc';  // Replace with your actual Google API Key
+      const apiKey = '';  // Replace with your actual Google API Key
       const keywords = "reptile store|reptile vendor|reptile market|reptile petstore";
       const url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${latitude},${longitude}&radius=32186.9&keyword=${encodeURIComponent(keywords)}&key=${apiKey}`;
       const response = await axios.get(url);

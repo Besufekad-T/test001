@@ -16,7 +16,7 @@ const ReptileRecognition = ({navigation}) => {
     });
     
     console.log(result)
-   
+    
     if (!result.cancelled) {
       const uriToPass = result.assets[0].uri
       setImageUri(uriToPass);
@@ -95,7 +95,7 @@ const ReptileRecognition = ({navigation}) => {
             {
               "role": "user",
               "content": [
-                {"type": "text", "text": "Please provide the common and scientific name at the beginning in the following format: Common Name (Scientific Name) - .... Then continue on by providing basic information about the reptile in the image, this information can include where they live mostly, what they eat, how long they live and etc."},
+                {"type": "text", "text": "Please provide the common and scientific name at the beginning in the following format: Common Name (Scientific Name) - .... Then continue on by providing basic information about the reptile in the image, this information can include where they live mostly, what they eat, how long they live. Please have the response be concise and done in one tiny paragraph. Just explain what the reptile needs for enclosure, what it eats, and other things it needs. Keep your full response to 6 sentences at max. Do not exceed this limit."},
                 {
                   "type": "image_url",
                   "image_url": {
@@ -111,7 +111,7 @@ const ReptileRecognition = ({navigation}) => {
         },
         {
           headers: {
-            'Authorization': ' ', // Replace with your actual API key
+            'Authorization': 'Bearer ', // Replace with your actual API key
             'Content-Type': 'application/json'
           },
         }

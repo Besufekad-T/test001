@@ -307,6 +307,14 @@ export default class MorphTracking extends Component {
                         
                     
                         <Text style={{ ...titleStyle, color: titleColor }}>{title}</Text>
+                        <View style={styles.buttonContainer}>
+                            <Button
+                                title="Generate Morph Tree"
+                                onPress={this.generateMorphTracking}
+                                color="green"
+                                
+                            />
+                        </View>
                         <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 100 }}>
     <Text>Include Grandparents</Text>
     <Switch
@@ -480,14 +488,7 @@ export default class MorphTracking extends Component {
                                 />
                             </>
                         )}
-                        <View style={styles.buttonContainer}>
-                            <Button
-                                title="Generate Morph Tree"
-                                onPress={this.generateMorphTracking}
-                                color="green"
-                                
-                            />
-                        </View>
+                       
                           </ScrollView>
                     </KeyboardAvoidingView>
                 )}

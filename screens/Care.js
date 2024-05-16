@@ -1,6 +1,5 @@
-// CareInfo.js
 import React, { useEffect, useState } from 'react';
-import { View, Text, ActivityIndicator, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, ActivityIndicator, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 
 const CareInfo = ({ route, navigation }) => {
   const { reptileInfo } = route.params; // Assume reptileInfo contains the name or relevant identifier
@@ -15,7 +14,7 @@ const CareInfo = ({ route, navigation }) => {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'Authorization': '' // Replace with your actual API key
+            'Authorization': 'Bearer ' // Replace with your actual API key
           },
           body: JSON.stringify({
             model: 'gpt-3.5-turbo-instruct', // Adjust based on the model you have access to
@@ -51,7 +50,11 @@ const CareInfo = ({ route, navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.infoText}>Care Information: {careInfo}</Text>
+      {/* Wrap the text in a ScrollView */}
+      <ScrollView style={styles.scrollView}>
+        <Text style={styles.infoText}>Care Information:</Text>
+        <Text style={styles.infoText}>{careInfo}</Text>
+      </ScrollView>
       <TouchableOpacity style={styles.goBackButton} onPress={() => navigation.goBack()}>
         <Text style={styles.buttonText}>Go Back</Text>
       </TouchableOpacity>
@@ -65,6 +68,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: 20,
     paddingBottom: 80,
+  },
+  scrollView: {
+    marginVertical: 20, // Provide some spacing around the scroll view
   },
   infoText: {
     fontSize: 16,

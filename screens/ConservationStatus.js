@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, ActivityIndicator, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, ActivityIndicator, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 
 const ConservationStatus = ({ route, navigation }) => {
   const { reptileInfo } = route.params; // Use the passed reptile information
@@ -13,7 +13,7 @@ const ConservationStatus = ({ route, navigation }) => {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'Authorization':  '' // Replace YOUR_OPENAI_API_KEY with your actual key
+            'Authorization':  'Bearer ' // Replace YOUR_API_KEY with your actual key
           },
           body: JSON.stringify({
             model: 'gpt-3.5-turbo-instruct',
@@ -45,7 +45,10 @@ const ConservationStatus = ({ route, navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.infoText}>Conservation Status: {conservationStatus}</Text>
+      <ScrollView style={styles.scrollView}>
+        <Text style={styles.infoText}>Conservation Status:</Text>
+        <Text style={styles.infoText}>{conservationStatus}</Text>
+      </ScrollView>
       <TouchableOpacity style={styles.goBackButton} onPress={() => navigation.goBack()}>
         <Text style={styles.buttonText}>Go Back</Text>
       </TouchableOpacity>
@@ -59,6 +62,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: 20,
     paddingBottom: 80,
+  },
+  scrollView: {
+    marginVertical: 20, // Provide some spacing around the scroll view
   },
   infoText: {
     fontSize: 16,
@@ -78,6 +84,5 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
 });
-
 
 export default ConservationStatus;
